@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Predictor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will This User Convert?</h1>
+        <form id="predict-form">
+            <div class="form-group">
+                <label for="session_time">Time Spent (seconds):</label>
+                <input type="number" id="session_time" name="session_time" step="any" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="pages_viewed">Pages Viewed:</label>
+                <input type="number" id="pages_viewed" name="pages_viewed" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="past_visits">Past Visits:</label>
+                <input type="number" id="past_visits" name="past_visits" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="traffic_source">Traffic Source:</label>
+                <select id="traffic_source" name="traffic_source" required>
+                    <option value="direct">Direct</option>
+                    <option value="referral">Referral</option>
+                    <option value="ads">Ads</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="user_device">Device:</label>
+                <select id="user_device" name="user_device" required>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Desktop">Desktop</option>
+                </select>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result" style="display: none;">
+            <h2>Prediction: <span id="prediction-text"></span></h2>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
